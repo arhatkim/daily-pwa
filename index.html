@@ -1,28 +1,45 @@
-@ -0,0 +1,27 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>EverydayHub 블로그</title>
+  <title>EverydayHub 블로그 PWA</title>
 
-  <!-- ✅ PWA 등록 -->
-  <link rel="manifest" href="manifest.json">
-  <meta name="theme-color" content="#ff3b3b">
+  <!-- PWA manifest -->
+  <link rel="manifest" href="/daily-pwa/manifest.json">
+  <link rel="icon" href="/daily-pwa/icon-192.png" type="image/png">
 
-  <script>
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/service-worker.js')
-          .then(() => console.log("✅ Service Worker registered"))
-          .catch(err => console.error("SW 등록 실패:", err));
-      });
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 40px;
+      text-align: center;
     }
-  </script>
+    button {
+      padding: 15px 30px;
+      font-size: 18px;
+      border: none;
+      border-radius: 8px;
+      background-color: #403404;
+      color: #fff;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
   <h1>EverydayHub 블로그</h1>
-  <p><a href="https://everydayhub.tistory.com" target="_blank">👉 블로그 바로가기</a></p>
-  <p>이 페이지를 홈 화면에 추가하면 앱처럼 실행됩니다.</p>
+  <p>👉 블로그 바로가기</p>
+  <button onclick="window.open('https://everydayhub.tistory.com/', '_blank')">
+    블로그 열기
+  </button>
+
+  <script>
+    // 서비스 워커 등록
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/daily-pwa/service-worker.js')
+        .then(() => console.log('Service Worker 등록 완료!'))
+        .catch(err => console.error('Service Worker 등록 실패:', err));
+    }
+  </script>
 </body>
 </html>
