@@ -1,7 +1,7 @@
 {
     "name": "EverydayHub 블로그",
     "short_name": "EverydayHub",
-    "start_url": "/index.html",
+    "start_url": "./index.html",
     "display": "standalone",
     "background_color": "#ffffff",
     "theme_color": "#ff3b3b",
