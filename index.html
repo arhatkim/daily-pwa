@@ -10,11 +10,7 @@
   <link rel="icon" href="icon-192.png" type="image/png">
 
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      padding: 40px;
-      text-align: center;
-    }
+    body { font-family: Arial; text-align: center; padding: 40px; }
     button {
       padding: 15px 30px;
       font-size: 18px;
@@ -28,13 +24,12 @@
 </head>
 <body>
   <h1>EverydayHub 블로그</h1>
-  <p>👉 블로그 바로가기</p>
+  <p>블로그를 홈 화면에 추가하면 앱처럼 실행됩니다!</p>
   <button onclick="window.open('https://everydayhub.tistory.com/', '_blank')">
     블로그 열기
   </button>
 
   <script>
-    // 서비스 워커 등록
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('service-worker.js')
         .then(() => console.log('Service Worker 등록 완료!'))
