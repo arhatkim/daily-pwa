@@ -6,8 +6,8 @@
   <title>EverydayHub 블로그 PWA</title>
 
   <!-- PWA manifest -->
-  <link rel="manifest" href="/daily-pwa/manifest.json">
-  <link rel="icon" href="/daily-pwa/icon-192.png" type="image/png">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="icon-192.png" type="image/png">
 
   <style>
     body {
@@ -36,7 +36,7 @@
   <script>
     // 서비스 워커 등록
     if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('/daily-pwa/service-worker.js')
+      navigator.serviceWorker.register('service-worker.js')
         .then(() => console.log('Service Worker 등록 완료!'))
         .catch(err => console.error('Service Worker 등록 실패:', err));
     }
